@@ -1,0 +1,44 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Adjust the number of columns as needed */
+    gap: 10px; /* Adjust the gap between grid items */
+  }
+  
+  .grid-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Style the checkboxes and labels */
+  input[type="checkbox"] {
+    display: none; /* Hide the actual checkbox */
+  }
+  
+  label {
+    cursor: pointer;
+  }
+  
+  /* Style when checkbox is checked */
+  input[type="checkbox"]:checked + label {
+    background-color: #e0e0e0; /* Change background color when checked */
+  }
+
+  button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #e0e0e0;
+  }
+  

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/cssMain.css">
+</head>
+<body>
+    <form method="post" action="/insert">
+        <label>
+            First Name:
+            <input type="text" id="first_name" name="first_name" placeholder="Enter First Name" >
+        </label>
+        <br>
+        <label>
+            Last Name:
+            <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name" >
+        </label>
+        <br>
+        <label>
+            Email:
+            <input type="text" id="email" name="email" placeholder="Enter Email Address" >
+        </label>
+        <br>
+        <label for="month"> Select Month:</label>
+        <select id="month" name="month">
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+        <br>
+        <label>
+            Year:
+            <input type="text" id="year" name="year" placeholder="Enter Year">
+        </label>
+            <div class="grid-container">
+              <div class="grid-item">
+                <input type="checkbox" id="checkbox1" name="checkbox1" value="true">
+                <label for="checkbox1">Option 1</label>
+              </div>
+              <div class="grid-item">
+                <input type="checkbox" id="checkbox2" name="checkbox2" value="true">
+                <label for="checkbox2">Option 2</label>
+              </div>
+              <div class="grid-item">
+                <input type="checkbox" id="checkbox3" name="checkbox3" value="true">
+                <label for="checkbox3">Option 3</label>
+              </div>
+              <div class="grid-item">
+                <input type="checkbox" id="checkbox4" name="checkbox4" value="true">
+                <label for="checkbox4">Option 4</label>
+              </div>
+                <div class="grid-item">
+                  <input type="checkbox" id="checkbox5" name="checkbox5" value="true">
+                  <label for="checkbox5">Option 5</label>
+                </div>
+                <div class="grid-item">
+                    <input type="checkbox" id="checkbox6" name="checkbox6" value="true">
+                    <label for="checkbox6">Option 6</label>
+                </div>
+                <div class="grid-item">
+                    <input type="checkbox" id="checkbox7" name="checkbox7" value="true">
+                    <label for="checkbox7">Option 7</label>
+                </div>
+                <div class="grid-item">
+                    <input type="checkbox" id="checkbox8" name="checkbox8" value="true">
+                    <label for="checkbox8">Option 8</label>
+                </div>
+                <div class="grid-item">
+                    <input type="checkbox" id="checkbox9" name="checkbox9" value="true">
+                    <label for="checkbox9">Option 9</label>
+                </div>
+                <div class="grid-item">
+                    <input type="checkbox" id="checkbox10" name="checkbox10" value="true">
+                    <label for="checkbox10">Option 10</label>
+                </div>
+                <div class="grid-item">
+                    <input type="checkbox" id="checkbox11" name="checkbox11" value="true">
+                    <label for="checkbox11">Option 11</label>
+                </div>
+                <div class="grid-item">
+                    <input type="checkbox" id="checkbox12" name="checkbox12" value="true">
+                    <label for="checkbox12">Option 12</label>
+                </div>
+                <div class="grid-item">
+                    <input type="checkbox" id="checkbox13" name="checkbox13" value="true">
+                    <label for="checkbox13">Option 13</label>
+                </div>
+                <div class="grid-item">
+                    <input type="checkbox" id="checkbox14" name="checkbox14" value="true">
+                    <label for="checkbox14">Option 14</label>
+                </div>
+                <div class="grid-item">
+                    <input type="checkbox" id="checkbox15" name="checkbox15" value="true">
+                    <label for="checkbox15">Option 15</label>
+                </div>
+            </div>
+          <input type="submit" value="Submit Here" onclick="showConfirmation()">  
+    </form>
+    <br>
+    <br>
+    <div class="row">
+        <div class="medium-12 columns text-center">
+          <a href="home.html">
+            <button>Return Home</button>
+          </a>
+        </div>
+    </div>
+
+<script>
+    function showConfirmation() {
+        window.alert("Submission Complete");
+    }
+</script>
+
+</body>
+</html>
