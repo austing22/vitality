@@ -7,12 +7,35 @@ const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({extended: true}));
 
+// Set 'views' directory for any views being rendered by Express app
+app.set('views', path.join(__dirname, 'public', 'views'))
+
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get("/", function(req,res) {
-    res.sendFile(__dirname + "/public/home.html");
+app.get("/", function(req, res) {
+    submissionModel.countDocuments({})
+        .then(count => {
+            displayModel.findOne({})
+                .then(displayData => {
+                    const probabilities = calculateProbability(displayData, count); // Calculate probability for all squares
+
+                    res.render("home", { submissionCount: count, probabilities: probabilities}); // Render home with submissionCount and probabilities
+                })
+                .catch(err => {
+                    console.error("Error fetching display data:", err);
+                    res.render("home", { submissionCount: count, probabilities: {} }); // Render with empty results
+                });      
+        }) 
+        .catch(err => {
+            console.error("Error counting documents:", err);
+            res.sendFile(__dirname + "/public/views/home.ejs"); // If error, still serve home.html
+        });
 });
+
 
 app.listen(3000, function() {
     console.log("Server is runing on port 3000");
@@ -213,4 +236,19 @@ function updateDisplayDataCollection() {
     .catch(error => {
         console.error("Error while aggregating data:", error);
     });
+}
+
+// Function to handle update of Vitality squares in home.ejs
+function calculateProbability(displayData, submissionCount) {
+    let probabilities = {};
+
+    // Loop through checkboxes and perform calculations
+    for (let i = 1; i <= 15; i++) {
+        const checkboxKey = `checkbox${i}`;
+        
+        const probability = (displayData[checkboxKey] / submissionCount) * 100;
+        probabilities[checkboxKey] = parseFloat(probability.toFixed(2));
+    }
+
+    return probabilities;
 }
